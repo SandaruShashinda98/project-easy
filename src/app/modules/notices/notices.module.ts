@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { NoticesRoutingModule } from './notices-routing.module';
 import { CreateNoticeComponent } from './create-notice/create-notice.component';
-import { CKEditorModule } from 'ng2-ckeditor';
+import { MaterialModule } from 'src/app/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { CKEditorModule } from 'ng2-ckeditor';
   imports: [
     CommonModule,
     NoticesRoutingModule,
-    CKEditorModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class NoticesModule { }
