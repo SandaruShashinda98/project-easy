@@ -1,4 +1,206 @@
-<p>create-notice works!</p>
-<h1>sithira</h1>
-<h1>sithira</h1>
-<h1>sithira</h1>
+
+<div class="container">
+  <div class="row py-3">
+    <div class="col-12 col-md-8 mb-3">
+      <mat-card>
+        <mat-card-title-group>
+          <mat-card-title
+            mat-dialog-title
+            class="d-flex align-items-center mb-1"
+          >
+            <span
+              style="font-size: 20px; align-items: center; display: flex"
+            >
+              <mat-icon
+                class="heading-icon mr-2"
+                style="font-size: 30px; margin-bottom: 0.4rem"
+                >newspaper</mat-icon
+              >
+              &nbsp; Create Notice
+            </span>
+          </mat-card-title>
+          <mat-card-subtitle style="margin-left: 0.1rem"> create a notice from here </mat-card-subtitle>
+        </mat-card-title-group>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content class="pt-4">
+          <form [formGroup]="form">
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field
+                  class="mb-2"
+                  appearance="fill"
+                  style="width: 100%"
+                >
+                  <mat-label> Title </mat-label>
+                  <input
+                    type="text"
+                    #titleField
+                    matInput
+                    maxlength="70"
+                    placeholder="Title"
+                    formControlName="title"
+                    required
+                  />
+                  <mat-hint align="end"
+                    >hint</mat-hint
+                  >
+                  <mat-error>Title is Required</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <mat-form-field
+                  class="mb-2"
+                  appearance="fill"
+                  style="width: 100%"
+                >
+                  <mat-label> Content </mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Content"
+                    formControlName="content"
+                    required
+                  />
+                  <mat-error>Content is Required</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!-- <div class="row">
+
+              <div class="col-12 col-md-6">
+                <mat-form-field appearance="fill" style="width: 100%">
+                  <mat-label>Start Date</mat-label>
+                  <input
+                    placeholder="Start Date"
+                    type="text"
+                    matInput
+                    [min]="todayDate"
+                    formControlName="start_date"
+                    [matDatepicker]="pickerA"
+                    (click)="pickerA.open()"
+                    required
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="pickerA"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #pickerA></mat-datepicker>
+                  <mat-error>Start Date Required</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <mat-form-field appearance="fill" style="width: 100%">
+                  <mat-label>Start Time</mat-label>
+                  <input
+                    placeholder="Start Time"
+                    matInput
+                    formControlName="start_time"
+                    [mtxDatetimepicker]="datetimePickerA"
+                    (click)="datetimePickerA.open()"
+                    readonly
+                    required
+                  />
+                  <mtx-datetimepicker-toggle
+                    [for]="datetimePickerA"
+                    matSuffix
+                  ></mtx-datetimepicker-toggle>
+                  <mtx-datetimepicker
+                    #datetimePickerA
+                    type="time"
+                    startView="clock"
+                    color="primary"
+                    mode="portrait"
+                    [twelvehour]="true"
+                    [touchUi]="false"
+                  >
+                  </mtx-datetimepicker>
+                  <mat-error>Start time is Required</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <mat-form-field appearance="fill" style="width: 100%">
+                  <mat-label>End Date</mat-label>
+                  <input
+                    type="text"
+                    placeholder="End Date"
+                    matInput
+                    formControlName="end_date"
+                    [min]="form.controls.start_date.value"
+                    [matDatepicker]="pickerB"
+                    (click)="pickerB.open()"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="pickerB"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #pickerB></mat-datepicker>
+                  <mat-error>
+                 End Date is Required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <mat-form-field appearance="fill" style="width: 100%">
+                  <mat-label>End time</mat-label>
+                  <input
+                    placeholder="end time"
+                    matInput
+                    formControlName="end_time"
+                    [mtxDatetimepicker]="datetimePickerB"
+                    (click)="datetimePickerB.open()"
+                    readonly
+                  />
+                  <mtx-datetimepicker-toggle
+                    [for]="datetimePickerB"
+                    matSuffix
+                  ></mtx-datetimepicker-toggle>
+                  <mtx-datetimepicker
+                    #datetimePickerB
+                    type="time"
+                    startView="clock"
+                    color="primary"
+                    mode="portrait"
+                    [twelvehour]="true"
+                    [touchUi]="false"
+                  >
+                  </mtx-datetimepicker>
+                  <mat-error> end time is required </mat-error>
+                </mat-form-field>
+              </div>
+            </div> -->
+
+
+          </form>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <div class="d-flex justify-content-end">
+            <button
+              (click)="onSave()"
+              class="m-2"
+              mat-raised-button
+              color="primary"
+              [disabled]="form.invalid || (form.pristine)"
+            >
+             Save
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
