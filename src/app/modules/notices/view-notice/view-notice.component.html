@@ -1,19 +1,18 @@
-<ng-container class="m-5">
-  <div class="row m-4 p-4">
+<ng-container>
+<div class="m-5 p-5">
+  <div class="row mx-4 mb-2 px-4" *ngFor="let item of noticeList; let i = index">
     <mat-expansion-panel [expanded]="false" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Day of the trip
+          {{item.title}}
         </mat-panel-title>
-        <mat-panel-description>
-          Inform the date you wish to travel
-          <mat-icon>date_range</mat-icon>
-        </mat-panel-description>
       </mat-expansion-panel-header>
-
+        {{item.content}}
       <mat-action-row>
-        <button mat-button color="primary" (click)="onRead()">Mark as Read</button>
+        <button *ngIf="item.isRead" mat-button color="primary" (click)="onRead(i)">Mark as Unread</button>
+        <button *ngIf="!item.isRead" mat-button color="primary" (click)="onRead(i)">Mark as Read</button>
       </mat-action-row>
     </mat-expansion-panel>
   </div>
+</div>
 </ng-container>
