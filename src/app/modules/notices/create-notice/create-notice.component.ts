@@ -9,12 +9,8 @@ import { NoticesService } from '../notices.service';
 })
 export class CreateNoticeComponent {
 
-  form = new FormGroup({
+  noticeFormGroup = new FormGroup({
     title: new FormControl(null, [Validators.required]),
-    // start_date: new FormControl(null, [Validators.required]),
-    // start_time: new FormControl(null, [Validators.required]),
-    // end_date: new FormControl(null),
-    // end_time: new FormControl(null),
     content: new FormControl(null, [Validators.required]),
   });
 
