@@ -8,19 +8,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateNoticeComponent {
 
-  form = new FormGroup({
+  noticeFormGroup = new FormGroup({
     title: new FormControl(null, [Validators.required]),
-    // start_date: new FormControl(null, [Validators.required]),
-    // start_time: new FormControl(null, [Validators.required]),
-    // end_date: new FormControl(null),
-    // end_time: new FormControl(null),
     content: new FormControl(null, [Validators.required]),
   });
 
-  todayDate: Date = new Date();
 
   onSave(){
-    console.log(this.form.value)
+    console.log(this.noticeFormGroup.value)
   }
 
 }

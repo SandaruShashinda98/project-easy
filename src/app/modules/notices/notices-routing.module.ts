@@ -6,21 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: CreateNoticeComponent,
-    // canActivate: [ModuleGuard, PermissionGuard],
-    // data: {
-    //   title: 'Customers',
-    //   goBackEnabled: true,
-    //   searchBarEnabled: true,
-    //   module: MODULES.CUSTOMERS,
-    //   allowedPermissions: getModulePermission(MODULES.CUSTOMERS, [
-    //     PERMISSION_ACTIONS.READ,
-    //   ]),
-    // },
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class NoticesRoutingModule { }
+export class NoticesRoutingModule {}
