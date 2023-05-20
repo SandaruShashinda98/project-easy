@@ -15,7 +15,7 @@ export class NoticesService {
   return this.http.get<any>('url')
  }
 
- getNotices(): Observable<any>{
+ getNotice(): Observable<any>{
    return this.http.get<any>('url')
   }
 

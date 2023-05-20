@@ -1,7 +1,7 @@
 <ng-container>
   <div>
-    <button mat-flat-button routerLink="/notice">Notice</button>
-    <button class="btn btn-primary">Click me!</button>
+    <button mat-flat-button (click)="addNotice()" >Add Notice</button>
+    <button mat-flat-button (click)="viewNotice()">View Notice</button>
   </div>
   <router-outlet></router-outlet>
 </ng-container>

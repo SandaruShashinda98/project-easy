@@ -1,0 +1,19 @@
+<ng-container class="m-5">
+  <div class="row m-4 p-4">
+    <mat-expansion-panel [expanded]="false" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Day of the trip
+        </mat-panel-title>
+        <mat-panel-description>
+          Inform the date you wish to travel
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="onRead()">Mark as Read</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+</ng-container>
