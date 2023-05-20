@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NoticesService } from '../notices.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-notice',
@@ -15,7 +16,8 @@ export class CreateNoticeComponent {
   });
 
 constructor(
-  private noticeService: NoticesService
+  private noticeService: NoticesService,
+  private snackBar: MatSnackBar
 ){}
 
   onSave(){
@@ -25,10 +27,10 @@ constructor(
     }
     this.noticeService.createNotice(data).subscribe({
       next: (res)=>{
-        // notice added
+        this.snackBar.open('Notice Created Successfully');
       },
       error: (err)=>{
-        // err
+        this.snackBar.open('Oopz Something Went Wrong');
       }
     })
   }

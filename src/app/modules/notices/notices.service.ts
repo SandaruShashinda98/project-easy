@@ -15,7 +15,7 @@ export class NoticesService {
   return this.http.get<any>('url')
  }
 
- getNotices(): Observable<any>{
+ getNotice(): Observable<any>{
    return this.http.get<any>('url')
   }
 
@@ -27,6 +27,10 @@ export class NoticesService {
     return this.http.patch('url',data)
   }
 
+
+  changeReadStatus(readStatus:boolean):Observable<any>{
+    return this.http.post<any>('url',readStatus)
+  }
   // deleteNotice(id:string):Observable<any>{
   //   return this.http.delete('url',id)
   // }
