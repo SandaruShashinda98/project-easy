@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NoticesService } from '../notices.service';
 
 @Component({
   selector: 'app-create-notice',
@@ -13,9 +14,23 @@ export class CreateNoticeComponent {
     content: new FormControl(null, [Validators.required]),
   });
 
+constructor(
+  private noticeService: NoticesService
+){}
 
   onSave(){
-    console.log(this.noticeFormGroup.value)
+    const data: any = {
+      title: this.form.controls.title.value,
+      content: this.form.controls.content.value
+    }
+    this.noticeService.createNotice(data).subscribe({
+      next: (res)=>{
+        // notice added
+      },
+      error: (err)=>{
+        // err
+      }
+    })
   }
 
 }
