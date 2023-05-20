@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CreateNoticeComponent {
 
-  form = new FormGroup({
+  noticeFormGroup = new FormGroup({
     title: new FormControl(null, [Validators.required]),
     content: new FormControl(null, [Validators.required]),
   });
