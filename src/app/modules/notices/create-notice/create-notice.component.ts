@@ -22,8 +22,8 @@ constructor(
 
   onSave(){
     const data: any = {
-      title: this.form.controls.title.value,
-      content: this.form.controls.content.value
+      title: this.noticeFormGroup.controls.title.value,
+      content: this.noticeFormGroup.controls.content.value
     }
     this.noticeService.createNotice(data).subscribe({
       next: (res)=>{
