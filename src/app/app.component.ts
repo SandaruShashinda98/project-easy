@@ -19,4 +19,12 @@ export class AppComponent {
   viewNotice(){
     this.router.navigate(['/notice/view']);
   }
+
+  addArticle(){
+    this.router.navigate(['/knowledge-base/create']);
+  }
+
+  viewArticle(){
+    this.router.navigate(['/knowledge-base/view']);
+  }
 }
