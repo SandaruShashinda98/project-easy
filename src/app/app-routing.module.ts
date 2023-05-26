@@ -6,7 +6,15 @@ const routes: Routes = [
     path: 'notice',
     loadChildren: () => import('./modules/notices/notices.module').then(m => m.NoticesModule)
   },
-  // other routes...
+  {
+    path: 'knowledge-base',
+    loadChildren: () => import('./modules/k-base/k-base.module').then(m => m.KBaseModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./modules/notification/notification.module').then(m => m.NotificationModule)
+  },
+
 ];
 
 @NgModule({

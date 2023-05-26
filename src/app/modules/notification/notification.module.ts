@@ -2,24 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NoticesRoutingModule } from './notices-routing.module';
-import { CreateNoticeComponent } from './create-notice/create-notice.component';
+import { NotificationRoutingModule } from './notification-routing.module';
+import { CreateNotificationComponent } from './create-notification/create-notification.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ViewNoticeComponent } from './view-notice/view-notice.component';
+import { ViewNotificationComponent } from './view-notification/view-notification.component';
 
 @NgModule({
   declarations: [
-    CreateNoticeComponent,
-    ViewNoticeComponent
+    CreateNotificationComponent,
+    ViewNotificationComponent
   ],
   imports: [
     CommonModule,
-    NoticesRoutingModule,
+    NotificationRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
   ]
 })
-export class NoticesModule { }
+export class NotificationModule { }

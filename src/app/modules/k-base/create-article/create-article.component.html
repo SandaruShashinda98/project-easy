@@ -1,5 +1,4 @@
-
-
+<h1>hi</h1>
 <div class="container">
   <div class="row py-3">
     <div class="col-12 col-md-8 mb-3">
@@ -7,28 +6,27 @@
         <mat-card-title-group>
           <mat-card-title
             mat-dialog-title
-            class="d-flex align-items-center mb-1"
+            class="d=flex align-items-center mb-1"
           >
-            <span
-              style="font-size: 20px; align-items: center; display: flex"
-            >
-              <mat-icon
-                class="heading-icon mr-2"
+            <span style="font-size: 20px; align-items: center; display: flex">
+              <span
+                class="material-icons"
                 style="font-size: 30px; margin-bottom: 0.4rem"
-                >newspaper</mat-icon
               >
-              &nbsp; Create Notice
+                article
+              </span>
+              &nbsp; Create Article
             </span>
           </mat-card-title>
-          <mat-card-subtitle style="margin-left: 0.1rem">
-             create a notice from here </mat-card-subtitle>
+          <mat-card-subtitle style="margin-left: 0.1rem;">
+            Create a article from here
+          </mat-card-subtitle>
         </mat-card-title-group>
 
-        <mat-divider></mat-divider>
+        <mat-divider> </mat-divider>
 
         <mat-card-content class="pt-4">
-          <form [formGroup]="noticeFormGroup">
-
+          <form [formGroup]="articleFormGroup">
             <div class="row">
               <div class="col">
                 <mat-form-field
@@ -76,8 +74,8 @@
 
 
           </form>
-        </mat-card-content>
 
+        </mat-card-content>
         <mat-card-actions>
           <div class="d-flex justify-content-end">
             <button
@@ -85,16 +83,14 @@
               class="m-2"
               mat-raised-button
               color="primary"
-              [disabled]="noticeFormGroup.invalid || (noticeFormGroup.pristine)"
+              [disabled]="articleFormGroup.invalid || (articleFormGroup.pristine)"
             >
              Save
             </button>
           </div>
+
         </mat-card-actions>
       </mat-card>
     </div>
   </div>
 </div>
->>>>>>> 744aabfdfa1ee0b15f4771ebc2fe37ce5482e29f
-
-

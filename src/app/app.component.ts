@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(
+    private router: Router
+  ){}
+
+  addNotice(){
+    this.router.navigate(['/notice/create']);
+  }
+
+  viewNotice(){
+    this.router.navigate(['/notice/view']);
+  }
+
+  addArticle(){
+    this.router.navigate(['/knowledge-base/create']);
+  }
+
+  viewArticle(){
+    this.router.navigate(['/knowledge-base/view']);
+  }
 }
