@@ -5,10 +5,12 @@ import { KBaseRoutingModule } from './k-base-routing.module';
 import { CreateArticleComponent } from './create-article/create-article.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewArticleComponent } from './view-article/view-article.component';
 
 @NgModule({
   declarations: [
-    CreateArticleComponent
+    CreateArticleComponent,
+    ViewArticleComponent
   ],
   imports: [
     CommonModule,
