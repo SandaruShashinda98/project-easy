@@ -1,0 +1,78 @@
+<div class="container">
+  <!--******************************Header area**************************************-->
+  <div class="row headerArea">
+    <div class="col filter">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Search" />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="col justify-content-end d-flex addItemButton">
+      <button (click)="onAddAsset()" mat-flat-button color="primary">
+        Add Assets
+      </button>
+    </div>
+  </div>
+  <!--******************************Table area**************************************-->
+  <div
+    class="row tableSection d-flex justify-content-center"
+    style="background-color: red"
+  >
+    <div class="table" style="background-color: green">
+      <table
+        mat-table
+        [dataSource]="assetsList"
+        class="mat-elevation-z8"
+        matSort
+      >
+        <!-- ID no Column -->
+        <ng-container matColumnDef="idNo">
+          <th mat-header-cell *matHeaderCellDef>ID No.</th>
+          <td mat-cell *matCellDef="let asset">{{ asset.idNo }}</td>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef>Category</th>
+          <td mat-cell *matCellDef="let asset">{{ asset.category }}</td>
+        </ng-container>
+
+        <!-- Brand & Model Column -->
+        <ng-container matColumnDef="brandModel">
+          <th mat-header-cell *matHeaderCellDef>Brand & Model</th>
+          <td mat-cell *matCellDef="let asset">{{ asset.brandModel }}</td>
+        </ng-container>
+
+        <!-- Reciever Column -->
+        <ng-container matColumnDef="reciever">
+          <th mat-header-cell *matHeaderCellDef>Reciever</th>
+          <td mat-cell *matCellDef="let asset">{{ asset.reciever }}</td>
+        </ng-container>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let asset">{{ asset.description }}</td>
+        </ng-container>
+
+        <!-- Issue Date Column -->
+        <ng-container matColumnDef="issueDate">
+          <th mat-header-cell *matHeaderCellDef>Issue Date</th>
+          <td mat-cell *matCellDef="let asset">{{ asset.issueDate }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <!-- <h1 class="d-flex justify-content-center">table</h1> -->
+    </div>
+  </div>
+  <!--******************************Pagination area**************************************-->
+
+  <div class="row paginationArea d-flex justify-content-end">
+    <div class="pagination">
+      <h1>pagination</h1>
+    </div>
+  </div>
+</div>
