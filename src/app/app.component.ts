@@ -27,4 +27,18 @@ export class AppComponent {
   viewArticle(){
     this.router.navigate(['/knowledge-base/view']);
   }
+  addNotification(){
+    this.router.navigate(['/notification/create']);
+  }
+
+  viewNotification(){
+    this.router.navigate(['/notification/view']);
+  }
+  addAssets(){
+    this.router.navigate(['/assets/create']);
+  }
+
+  viewAssets(){
+    this.router.navigate(['/assets/view']);
+  }
 }
