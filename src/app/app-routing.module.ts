@@ -19,6 +19,10 @@ const routes: Routes = [
         path: 'knowledge-base',
         loadChildren: () => import('./modules/k-base/k-base.module').then(m => m.KBaseModule)
       },
+      {
+        path: 'assets',
+        loadChildren: () => import('./modules/assets/assets.module').then(m => m.AssetsModule)
+      },
     ]
   },
 ];

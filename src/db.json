@@ -1,0 +1,28 @@
+{
+  "assets": [
+    {
+      "idNo": 1,
+      "category": "tab",
+      "brandModel": "H",
+      "reciever": "svv",
+      "description": "odvbljbsvw",
+      "issueDate": "03.05"
+    },
+    {
+      "idNo": 4,
+      "category": "Laptop",
+      "brandModel": "H",
+      "reciever": "s",
+      "description": "odvbljbsvw",
+      "issueDate": "03.05"
+    },
+    {
+      "idNo": 5,
+      "category": "Ladvdsfvsptop",
+      "brandModel": "H",
+      "reciever": "s",
+      "description": "odvbljbsvw",
+      "issueDate": "03.05"
+    }
+  ]
+}
