@@ -6,17 +6,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
