@@ -115,7 +115,17 @@
             <!--***********************************************************-->
           </form>
         </mat-card-content>
-        <mat-card-actions> </mat-card-actions>
+        <mat-card-actions>
+          <button
+            (click)="onSaveAsset()"
+            class="m-2"
+            style="white-space: pre-wrap"
+            mat-flat-button
+            [disabled]="addAssetFormGroup.invalid || addAssetFormGroup.pristine"
+          >
+            save
+          </button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>
