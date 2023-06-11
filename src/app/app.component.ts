@@ -4,41 +4,42 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  constructor(private router: Router) {}
 
-  constructor(
-    private router: Router
-  ){}
-
-  addNotice(){
+  addNotice() {
     this.router.navigate(['/notice/create']);
   }
 
-  viewNotice(){
+  viewNotice() {
     this.router.navigate(['/notice/view']);
   }
 
-  addArticle(){
+  addArticle() {
     this.router.navigate(['/knowledge-base/create']);
   }
 
-  viewArticle(){
+  viewArticle() {
     this.router.navigate(['/knowledge-base/view']);
   }
-  addNotification(){
+  addNotification() {
     this.router.navigate(['/notification/create']);
   }
 
-  viewNotification(){
+  viewNotification() {
     this.router.navigate(['/notification/view']);
   }
-  addAssets(){
+  addAssets() {
     this.router.navigate(['/assets/create']);
   }
 
-  viewAssets(){
+  viewAssets() {
     this.router.navigate(['/assets/view']);
+  }
+
+  authentification() {
+    this.router.navigate(['/auth/authentification']);
   }
 }

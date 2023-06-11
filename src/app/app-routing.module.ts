@@ -9,27 +9,39 @@ const routes: Routes = [
     children: [
       {
         path: 'launchpad',
-        loadChildren: () => import('./modules/launchpad/launchpad.module').then(m => m.LaunchpadModule)
+        loadChildren: () =>
+          import('./modules/launchpad/launchpad.module').then(
+            (m) => m.LaunchpadModule
+          ),
       },
       {
         path: 'notice',
-        loadChildren: () => import('./modules/notices/notices.module').then(m => m.NoticesModule)
+        loadChildren: () =>
+          import('./modules/notices/notices.module').then(
+            (m) => m.NoticesModule
+          ),
       },
       {
         path: 'knowledge-base',
-        loadChildren: () => import('./modules/k-base/k-base.module').then(m => m.KBaseModule)
+        loadChildren: () =>
+          import('./modules/k-base/k-base.module').then((m) => m.KBaseModule),
       },
       {
         path: 'assets',
-        loadChildren: () => import('./modules/assets/assets.module').then(m => m.AssetsModule)
+        loadChildren: () =>
+          import('./modules/assets/assets.module').then((m) => m.AssetsModule),
       },
-    ]
+      {
+        path: 'authentification',
+        loadChildren: () =>
+          import('./modules/auth/auth.module').then((m) => m.AuthModule),
+      },
+    ],
   },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
