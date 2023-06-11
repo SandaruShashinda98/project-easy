@@ -11,7 +11,7 @@ export class AssetsService {
 
   constructor(private http: HttpClient) {}
 
-  addAssets(Assets: Assets) {
+  addAssets(Assets: Assets): Observable<any> {
     return this.http.post<Assets>(`${this.baseUrl}`, Assets);
   }
 
@@ -19,15 +19,15 @@ export class AssetsService {
     return this.http.get<Assets[]>(`${this.baseUrl}`);
   }
 
-  updateAssets(Assets: Assets, id: string) {
-    return this.http.put<Assets>(`${this.baseUrl}/${id}`, Assets);
+  updateAssets(Assets: Assets, idNo: string) {
+    return this.http.put<Assets>(`${this.baseUrl}/${idNo}`, Assets);
   }
 
-  deleteAssets(id: string) {
-    return this.http.delete<Assets>(`${this.baseUrl}/${id}`);
+  deleteAssets(idNo: string) {
+    return this.http.delete<Assets>(`${this.baseUrl}/${idNo}`);
   }
 
-  getAssetsById(id: string) {
-    return this.http.get<Assets>(`${this.baseUrl}/${id}`);
+  getAssetsById(idNo: string) {
+    return this.http.get<Assets>(`${this.baseUrl}/${idNo}`);
   }
 }

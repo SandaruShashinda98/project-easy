@@ -1,7 +1,7 @@
 {
   "assets": [
     {
-      "idNo": 1,
+      "idNo": "1",
       "category": "tab",
       "brandModel": "H",
       "reciever": "svv",
@@ -9,7 +9,7 @@
       "issueDate": "03.05"
     },
     {
-      "idNo": 4,
+      "idNo": "2",
       "category": "Laptop",
       "brandModel": "H",
       "reciever": "s",
@@ -17,7 +17,7 @@
       "issueDate": "03.05"
     },
     {
-      "idNo": 5,
+      "idNo": "3",
       "category": "Ladvdsfvsptop",
       "brandModel": "H",
       "reciever": "s",

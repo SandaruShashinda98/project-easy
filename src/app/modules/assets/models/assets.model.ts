@@ -1,5 +1,5 @@
 export interface Assets {
-  idNo: number;
+  idNo: string;
   category: string;
   brandModel: String;
   reciever: string;
