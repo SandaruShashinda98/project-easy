@@ -11,6 +11,9 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,18 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
     DashboardComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
     BrowserAnimationsModule,
+    MaterialModule, 
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     NgxChartsModule
   ],
   providers: [],

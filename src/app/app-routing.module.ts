@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'app',
     component: DashboardComponent,
     children: [
       {
@@ -15,26 +24,16 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'notice',
+        path: 'product',
         loadChildren: () =>
-          import('./modules/notices/notices.module').then(
-            (m) => m.NoticesModule
+          import('./modules/product/product.module').then(
+            (m) => m.ProductModule
           ),
       },
       {
-        path: 'knowledge-base',
+        path: 'profile',
         loadChildren: () =>
-          import('./modules/k-base/k-base.module').then((m) => m.KBaseModule),
-      },
-      {
-        path: 'assets',
-        loadChildren: () =>
-          import('./modules/assets/assets.module').then((m) => m.AssetsModule),
-      },
-      {
-        path: 'authentification',
-        loadChildren: () =>
-          import('./modules/auth/auth.module').then((m) => m.AuthModule),
+          import('./modules/profile/profile.module').then((m) => m.ProfileModule),
       },
     ],
   },

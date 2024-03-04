@@ -1,0 +1,224 @@
+<div class="d-flex justify-content-center">
+  <!-- Buyer Form -->
+  <mat-card class="mt-4">
+    <mat-card-header>
+      <mat-card-title class="custom-card-title"
+        >Add Product Details</mat-card-title
+      >
+    </mat-card-header>
+    <!-- Body Measurement Details -->
+    <mat-card-content class="p-4">
+      <form [formGroup]="productForm" (ngSubmit)="onClickItemSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Brand -->
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Brand</mat-label>
+              <input
+                matInput
+                formControlName="brand"
+                class="custom-input"
+                required
+              />
+              <mat-error> Brand is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <!-- Available Count -->
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Available Count</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="availableCount"
+                class="custom-input"
+                required
+              />
+              <mat-error> Available Count required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row mb-1">
+          <!-- Gender (Radio Group) -->
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="MALE">Male</mat-radio-button>
+            <mat-radio-button value="FEMALE">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="row">
+          <!-- Description -->
+          <mat-form-field class="mt-1">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              formControlName="description"
+              class="custom-input"
+              required
+            ></textarea>
+            <mat-error> Description is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <!-- Image URL -->
+          <mat-form-field>
+            <mat-label>Image URL</mat-label>
+            <input matInput formControlName="imageUrl" />
+            <mat-error> Image required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row mb-2">
+          <mat-radio-group
+            formControlName="bodyArea"
+            aria-label="Select Item Type"
+          >
+            <mat-radio-button value="UPPER">Upper Body</mat-radio-button>
+            <mat-radio-button value="LOWER">Lower Body</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!--upper-->
+        <div *ngIf="productForm.controls.bodyArea.value === 'UPPER'">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Shoulder Width (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="shoulderWidth"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Shoulder Width is required</mat-error> -->
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Chest Width (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="chestWidth"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Chest Width is required</mat-error> -->
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Belly (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="belly"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Belly is required</mat-error> -->
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Shoulder to Waist (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="shoulderToWaist"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Shoulder to Waist is required</mat-error> -->
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Arm Length (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="armLength"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Arm Length is required</mat-error> -->
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <!--lover-->
+        <div *ngIf="productForm.controls.bodyArea.value === 'LOWER'">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Waist (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="waist"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Waist is required</mat-error> -->
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Hip (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="hip"
+                  class="custom-input"
+                />
+                <!-- <mat-error>Hip is required</mat-error> -->
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Waist to Knee (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="waistToKnee"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Waist to Knee is required</mat-error> -->
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Knee to Toe (inch)</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="kneeToToe"
+                  class="custom-input"
+                />
+                <!-- <mat-error> Knee to Toe is required</mat-error> -->
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!this.productForm.valid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

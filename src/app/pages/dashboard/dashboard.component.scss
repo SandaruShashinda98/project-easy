@@ -1,22 +1,46 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  mat-drawer {
-    width: 350px;
-  }
-  
-  mat-drawer-container {
-    height: 100%;
-  }
-  
-  mat-drawer-content {
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+mat-drawer {
+  width: 10vw;
+  background: rgba(209, 252, 252, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-  .drawer{
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
+mat-drawer-container {
+  height: 100%;
+  background: rgba(248, 249, 249, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+app-header{
+  background: rgba(248, 249, 249, 0.1); 
+  // border: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+mat-drawer-content {
+  padding: 20px;
+}
+
+.drawer {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(21, 21, 21, 0.5);
+}
+
+/* Optional: Add hover effect for a more interactive feel */
+.mat-drawer-container:hover {
+  background: rgba(189, 221, 244, 0.2);
+}
+
+/* Optional: Add hover effect for mat-drawer */
+.mat-drawer:hover {
+  background: rgba(189, 221, 244, 0.2);
+}
+
+/* Optional: Add hover effect for router-outlet content */
+.mat-drawer-content:hover {
+  background: rgba(189, 221, 244, 0.2);
+}

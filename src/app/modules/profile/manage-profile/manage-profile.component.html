@@ -1,0 +1,312 @@
+<!--common form-->
+<div class="row d-flex justify-content-center m-auto">
+  <div class="col-md-4">
+    <mat-card class="mt-4">
+      <mat-card-header>
+        <mat-card-title class="custom-card-title">Profile</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="p-4">
+        <form [formGroup]="basicForm" (ngSubmit)="onClickBuyerSubmit()">
+          <!-- Name -->
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" class="custom-input" />
+              <mat-error>Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <!-- Email -->
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>E-Mail</mat-label>
+              <input matInput formControlName="email" class="custom-input" />
+              <mat-error>E-mail is required</mat-error>
+            </mat-form-field>
+          </div>
+          <!-- Address -->
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="address" class="custom-input" />
+              <mat-error>Address is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="!this.buyerForm.valid"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-md-4">
+    <!--password form-->
+    <mat-card class="mt-4">
+      <mat-card-header>
+        <mat-card-title class="custom-card-title">Credentials</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="p-4">
+        <form [formGroup]="passwordForm" (ngSubmit)="onClickBuyerSubmit()">
+          <!-- current password -->
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Current Password</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="currentPassword"
+                required
+              />
+              <mat-error>Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <!-- New Password -->
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>New Password</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="newPassword"
+                required
+              />
+              <mat-error>E-mail is required</mat-error>
+            </mat-form-field>
+          </div>
+          <!-- Confirm New Password -->
+          <div class="mb-3">
+            <mat-form-field class="w-100">
+              <mat-label>Confirm New Password</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="confirmNewPassword"
+                required
+              />
+              <mat-error>Address is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="!this.buyerForm.valid"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <!-- Buyer Form -->
+  <mat-card *ngIf="permissionType === 'BUYER'" class="col-md-4 mt-4">
+    <mat-card-header>
+      <mat-card-title class="custom-card-title"
+        >Body Measurement Details</mat-card-title
+      >
+    </mat-card-header>
+    <!-- Body Measurement Details -->
+    <mat-card-content class="p-4">
+      <form [formGroup]="buyerForm" (ngSubmit)="onClickBuyerSubmit()">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Shoulder Width (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="shoulderWidth"
+                class="custom-input"
+                required
+              />
+              <mat-error> Shoulder Width is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Chest Width (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="chestWidth"
+                class="custom-input"
+                required
+              />
+              <mat-error> Chest Width is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Belly (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="belly"
+                class="custom-input"
+                required
+              />
+              <mat-error> Belly is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Waist (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="waist"
+                class="custom-input"
+                required
+              />
+              <mat-error> Waist is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Hip (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="hip"
+                class="custom-input"
+                required
+              />
+              <mat-error>Hip is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Arm Length (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="armLength"
+                class="custom-input"
+                required
+              />
+              <mat-error> Arm Length is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Shoulder to Waist (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="shoulderToWaist"
+                class="custom-input"
+                required
+              />
+              <mat-error> Shoulder to Waist is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Waist to Knee (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="waistToKnee"
+                class="custom-input"
+                required
+              />
+              <mat-error> Waist to Knee is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Knee to Toe (inch)</mat-label>
+              <input
+                matInput
+                type="number"
+                formControlName="kneeToToe"
+                class="custom-input"
+                required
+              />
+              <mat-error> Knee to Toe is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!this.buyerForm.valid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Seller Form -->
+  <mat-card *ngIf="permissionType === 'SELLER'" class="col-md-4 mt-4">
+    <mat-card-header>
+      <mat-card-title class="custom-card-title">Store Details</mat-card-title>
+    </mat-card-header>
+    <!-- Store, Brand, Category -->
+    <mat-card-content class="p-4">
+      <form [formGroup]="sellerForm" (ngSubmit)="onClickSellerSubmit()">
+        <div class="mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Store Name</mat-label>
+            <input
+              matInput
+              formControlName="storeName"
+              class="custom-input"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="mb-3">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Store Description</mat-label>
+            <input
+              matInput
+              formControlName="storeDescription"
+              class="custom-input"
+              required
+            />
+          </mat-form-field>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!this.sellerForm.valid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

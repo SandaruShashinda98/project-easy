@@ -1,0 +1,92 @@
+.custom-login-card {
+    width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.2); /* Adjust the last value for transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a border with the same transparency */
+    backdrop-filter: blur(10px); /* Adjust the blur value based on your preference */
+  }
+
+  .custom-login-card:hover {
+    background: rgba(255, 255, 255, 0.3); /* Adjust the transparency on hover */
+  }
+  
+  .custom-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-card-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3949ab;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  
+  .custom-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .custom-example-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .custom-example-full-width {
+    width: 100%;
+  }
+  
+  .custom-button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .custom-button-group button {
+    background-color: #43a047;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-button-group button:hover {
+    background-color: #388e3c;
+  }
+  
+  .custom-button-group a {
+    color: #3949ab;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .custom-button-group a:hover {
+    color: #1a237e;
+  }
+  
+
+  #input {
+    background: rgba(17, 198, 235, 0.1); /* Adjust transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin: 8px; /* Adjust margin based on preference */
+    transition: background 0.3s; /* Add a smooth transition effect */
+  }
+  
+  /* Style for input inside mat-form-field */
+ mat-form-field input {
+    color: white; /* Text color */
+  }
+  
+  /* Optional: Add hover effect for form field */
+  mat-form-field:hover {
+   // background: rgba(255, 255, 255, 0.2);
+  }

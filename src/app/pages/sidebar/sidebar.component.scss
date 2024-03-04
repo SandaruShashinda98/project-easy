@@ -14,3 +14,8 @@
       }
     }
   }
+  
+  a.mat-list-item.router-link-active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #3498db;
+  }

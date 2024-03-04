@@ -1,3 +1,51 @@
 ul li {
     list-style: none;
   }
+
+/* Add this style in your component's SCSS file (e.g., app-header.component.scss) */
+.mat-toolbar {
+  height: 50px; /* Adjust the height based on your preference */
+  background-color: #3498db; /* Change the background color */
+  color: white; /* Change the text color */
+}
+
+.mat-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px; /* Add padding for inner content */
+}
+
+/* Optional: Add styles for the menu button */
+button.mat-icon-button {
+  color: white; /* Change the icon color */
+}
+
+/* Optional: Add hover effect for the menu button */
+button.mat-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Optional: Style for the title span */
+span {
+  font-size: 1.2em; /* Adjust font size */
+}
+
+/* Optional: Add styles for the buttons on the right */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: Style for individual button in the right side */
+li button.mat-icon-button {
+  color: white; /* Change the icon color */
+}
+
+/* Optional: Add hover effect for buttons on the right */
+li button.mat-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

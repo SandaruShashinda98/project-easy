@@ -1,22 +1,23 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h2>Sandaru Shashinda</h2>
-            <h4>example@email.com</h4>
+            <h2>Hii {{name}}</h2>
+            <h4>{{email}}</h4>
         </div>
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="a dog img">
+        <!-- <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="a dog img"> -->
     </div>
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Pages</h2>
+     <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/launchpad">LaunchPad</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/profile">My Profile</a>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/launchpad">LaunchPad</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/notice/create">Create Notice</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/notice/view">View Notice</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/knowledge-base/create">Create Articles</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/knowledge-base/view">View Articles</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/assets/view">View Assets</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/assets/create">Create Assets</a>
+    <div *ngIf="permissionType === 'BUYER'">
+        <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/notice/view">View Notice</a> -->
+    </div>
 
+    <div *ngIf="permissionType === 'SELLER'">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/product/create">Add Product</a>
+        <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/assets/view">View Products</a> -->
+    </div>
 </mat-nav-list>

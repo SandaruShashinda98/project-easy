@@ -1,0 +1,25 @@
+.custom-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #dc143c;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  
+
+  mat-label {
+    color: #336699; /* Your preferred label color */
+  }
+
+  mat-error {
+    color: #ff0000; /* Red color for error message */
+    font-size: 12px; /* Adjust font size as needed */
+    margin-top: 4px; /* Add margin to separate from input */
+  }
+
+  .custom-input {
+    // border-radius: 8px; /* Rounded corners */
+    // border: 1px solid #336699; /* Border color */
+  }
