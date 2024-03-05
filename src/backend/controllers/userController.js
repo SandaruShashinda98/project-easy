@@ -76,7 +76,6 @@ const logoutUser = (req, res) => {
 // @desc    Get user profile
 // @route   GET /api/users/profile/:id
 const getUserProfile = asyncHandler(async (req, res) => {
-  console.log(req.params)
   const user = await User.findById(req.params.id);
 
   if (user) {

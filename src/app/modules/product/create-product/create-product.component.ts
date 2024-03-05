@@ -57,7 +57,6 @@ export class CreateProductComponent {
     } as IProductRequest;
     this.productService.createItem(item).subscribe({
       next: (res: IProductRequest) => {
-        console.log(res);
         this.snackBar.open('Product Added Successfully', 'Dismiss', {
           duration: 3000,
         });

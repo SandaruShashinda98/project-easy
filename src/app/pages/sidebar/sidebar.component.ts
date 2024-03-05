@@ -15,7 +15,6 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.stateManageService.loggedUserData$.subscribe({
       next: (res: any) => {
-        console.log(res);
         this.permissionType = res.permissionType;
         this.name = res.name;
         this.email = res.email;

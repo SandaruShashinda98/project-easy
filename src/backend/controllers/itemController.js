@@ -16,7 +16,6 @@ const createItem = asyncHandler(async (req, res) => {
   };
 
   const createdItem = await item.create(saveItem);
-  console.log(createdItem)
 
   if (createdItem) {
     res.status(201).json(createdItem);

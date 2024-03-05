@@ -25,7 +25,6 @@ export class LoginComponent {
     }
     this.userService.loginUser(user).subscribe({
       next : (res: any)=>{
-        console.log(res)
         this.stateManageService.setLoggedUserData(res)
         this.snackBar.open('Logged in Successfully', 'Dismiss', {
           duration: 3000,
