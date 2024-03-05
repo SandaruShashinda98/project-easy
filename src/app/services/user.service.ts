@@ -19,12 +19,16 @@ export class UserService {
     return this.http.post<User>(`${this.baseUrl}/auth`, user);
   }
 
-  getUser():Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}`);
+  getUser(id: string):Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/profile/${id}`);
   }
 
   updateUser(user: User, id: string):Observable<User> {
-    return this.http.put<User>(`${this.baseUrl}/${id}`, user);
+    return this.http.patch<User>(`${this.baseUrl}/profile/${id}`, user);
+  }
+
+  updatePassword(password: any, id: string):Observable<User> {
+    return this.http.patch<any>(`${this.baseUrl}/password/${id}`, password);
   }
 
   logOutUser():Observable<any> {

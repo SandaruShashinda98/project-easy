@@ -6,7 +6,7 @@
         <mat-card-title class="custom-card-title">Profile</mat-card-title>
       </mat-card-header>
       <mat-card-content class="p-4">
-        <form [formGroup]="basicForm" (ngSubmit)="onClickBuyerSubmit()">
+        <form [formGroup]="basicForm" (ngSubmit)="onClickBasicSubmit()">
           <!-- Name -->
           <div class="mb-3">
             <mat-form-field class="w-100">
@@ -37,7 +37,8 @@
             <button
               mat-raised-button
               color="primary"
-              [disabled]="!this.buyerForm.valid"
+              style="background-color: crimson; color: white"
+              [disabled]="!this.basicForm.valid"
               class="btn btn-primary"
             >
               Submit
@@ -54,7 +55,7 @@
         <mat-card-title class="custom-card-title">Credentials</mat-card-title>
       </mat-card-header>
       <mat-card-content class="p-4">
-        <form [formGroup]="passwordForm" (ngSubmit)="onClickBuyerSubmit()">
+        <form [formGroup]="passwordForm" (ngSubmit)="onClickPasswordSubmit()">
           <!-- current password -->
           <div class="mb-3">
             <mat-form-field class="w-100">
@@ -100,7 +101,8 @@
             <button
               mat-raised-button
               color="primary"
-              [disabled]="!this.buyerForm.valid"
+              style="background-color: crimson; color: white"
+              [disabled]="!this.passwordForm.valid"
               class="btn btn-primary"
             >
               Submit
@@ -114,7 +116,7 @@
 
 <div class="row d-flex justify-content-center">
   <!-- Buyer Form -->
-  <mat-card *ngIf="permissionType === 'BUYER'" class="col-md-4 mt-4">
+  <mat-card *ngIf="permissionType === 'BUYER'" class="col-md-6 mt-4">
     <mat-card-header>
       <mat-card-title class="custom-card-title"
         >Body Measurement Details</mat-card-title
@@ -254,6 +256,7 @@
           <button
             mat-raised-button
             color="primary"
+            style="background-color: crimson; color: white"
             [disabled]="!this.buyerForm.valid"
             class="btn btn-primary"
           >
@@ -300,6 +303,7 @@
           <button
             mat-raised-button
             color="primary"
+            style="background-color: crimson; color: white"
             [disabled]="!this.sellerForm.valid"
             class="btn btn-primary"
           >

@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProductRequest } from 'src/app/models/user.model';
+import { IBodyCategoryRequest, IProductRequest } from 'src/app/models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   private baseUrl: string = 'http://localhost:5000/api/items';
+  private MLBaseUrl: string = 'http://localhost:8081';
 
   constructor(private http: HttpClient) {}
 
@@ -17,5 +18,15 @@ export class ProductService {
 
   updateItem(item: IProductRequest, id: string): Observable<IProductRequest> {
     return this.http.patch<IProductRequest>(`${this.baseUrl}/${id}`, item);
+  }
+
+
+  //FOR ML 
+  getBodyCategoryMale(data:any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/male/category`, data);
+  }
+
+  getBodyCategoryFemale(data: any): Observable<any> {
+    return this.http.post<any>(`${this.MLBaseUrl}/female/category`, data);
   }
 }

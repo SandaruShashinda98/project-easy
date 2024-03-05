@@ -1,8 +1,8 @@
 
-<div class="containor">
+<div class="containor row d-flex justify-content-center">
     
-<div class="row">
-    <div class="col-12">
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6">
         <ngx-charts-bar-vertical 
         [view]="[500,200]"
         [results]="saleData"
@@ -17,7 +17,7 @@
         [gradient]="true">
     </ngx-charts-bar-vertical>
     </div>
-    <div class="col-12">
+    <div class="col-md-6">
         <ngx-charts-pie-chart 
         [results]="saleData"
         [legend]="true"
@@ -26,7 +26,7 @@
         [labels]="true" >
     </ngx-charts-pie-chart>
     </div>
-    <div class="col-12">
+    <div class="col-md-6">
         <ngx-charts-pie-grid 
         [results]="saleData" 
         [view]="[600,300]">

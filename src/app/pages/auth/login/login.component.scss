@@ -23,7 +23,7 @@
   .custom-card-title {
     font-size: 28px;
     font-weight: bold;
-    color: #3949ab;
+    color: #dc143c;
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -89,4 +89,10 @@
   /* Optional: Add hover effect for form field */
   mat-form-field:hover {
    // background: rgba(255, 255, 255, 0.2);
+  }
+
+  .logo-text {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #000000; /* Your preferred color */
   }

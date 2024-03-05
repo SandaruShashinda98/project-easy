@@ -5,9 +5,16 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.2); /* Adjust the last value for transparency */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Adjust the last value for transparency */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a border with the same transparency */
-  backdrop-filter: blur(10px); /* Adjust the blur value based on your preference */
+  backdrop-filter: blur(
+    10px
+  ); /* Adjust the blur value based on your preference */
 }
 
 .custom-login-card:hover {
@@ -23,7 +30,7 @@
 .custom-card-title {
   font-size: 28px;
   font-weight: bold;
-  color: #3949ab;
+  color: #dc143c;
   text-align: center;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -72,7 +79,6 @@
   color: #1a237e;
 }
 
-
 #input {
   background: rgba(17, 198, 235, 0.1); /* Adjust transparency */
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -88,11 +94,16 @@ mat-form-field input {
 
 /* Optional: Add hover effect for form field */
 mat-form-field:hover {
- // background: rgba(255, 255, 255, 0.2);
+  // background: rgba(255, 255, 255, 0.2);
 }
 
-  
-  ///
-   .mat-mdc-radio-button ~ .mat-mdc-radio-button {
-    margin-left: 16px;
-  }
+///
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}
+
+.logo-text {
+  font-size: 3rem; /* Adjust the size as needed */
+  font-weight: bold;
+  color: #000000; /* Your preferred color */
+}

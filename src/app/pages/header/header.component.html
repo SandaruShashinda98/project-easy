@@ -1,10 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar >
     <mat-toolbar-row>
-        <button mat-icon-button (click)="toggleSideBar()">
-            <mat-icon>menu</mat-icon>
-        </button>
-
-        <span> E-Commerce System </span>
+        <div style="display: flex; align-items: center;" class="mb-3">
+            <button mat-icon-button (click)="toggleSideBar()" style="margin-right: 10px;">
+                <mat-icon>menu</mat-icon>
+            </button>
+        
+            <span style="font-weight: bold;">fitMate</span>
+        </div>
+        
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">

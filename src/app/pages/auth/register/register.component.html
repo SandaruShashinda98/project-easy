@@ -1,35 +1,117 @@
-<mat-card class="custom-login-card">
+
+<div class="row d-md-flex justify-content-center mt-4 d-none">
+  <mat-card style="width: 50vw">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-5 text-center">
+        <h1 class="logo-text">fitMate</h1>
+      </div>
+      <div class="col-md-7">
+        <mat-card class="custom-login-card">
+          <mat-card-header class="custom-card-header">
+            <mat-card-title class="custom-card-title">Registration</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="custom-card-content" style="margin-top: 15px">
+            <form class="custom-example-form" [formGroup]="registerForm">
+              <mat-form-field class="custom-example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" />
+                <mat-error>Name is required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="custom-example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" />
+                <mat-error>E-mail is required</mat-error>
+              </mat-form-field>
+              <mat-form-field class="custom-example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" />
+                <mat-error>Password is required</mat-error>
+              </mat-form-field>
+        
+              <mat-radio-group
+                formControlName="userType"
+                aria-label="Select a User Type"
+              >
+                <mat-radio-button value="SELLER">Seller</mat-radio-button>
+                <mat-radio-button value="BUYER">Buyer</mat-radio-button>
+              </mat-radio-group>
+        
+              <div class="custom-button-group">
+                <button
+                  routerLink="/login"
+                  mat-raised-button
+                  style="background-color: #4c54f8; color: white"
+                >
+                  Back to Login
+                </button>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  style="background-color: crimson; color: white"
+                  [disabled]="!this.registerForm.valid"
+                  (click)="proceedRegister()"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="row d-md-none">
+  <mat-card class="custom-login-card">
     <mat-card-header class="custom-card-header">
-       <mat-card-title class="custom-card-title">Registration</mat-card-title>
-     </mat-card-header>
-     <mat-card-content class="custom-card-content" style="margin-top: 15px;">
-       <form class="custom-example-form" [formGroup]="registerForm">
-         <mat-form-field class="custom-example-full-width">
-           <mat-label>Name</mat-label>
-           <input matInput formControlName="name">
-           <mat-error>Name is required</mat-error>
-         </mat-form-field>
-         <mat-form-field class="custom-example-full-width">
-           <mat-label>Email</mat-label>
-           <input matInput formControlName="email">
-           <mat-error>E-mail is required</mat-error>
-         </mat-form-field>
-         <mat-form-field class="custom-example-full-width">
-           <mat-label>Password</mat-label>
-           <input type="password" matInput formControlName="password">
-           <mat-error>Password is required</mat-error>
-         </mat-form-field>
-   
-         <mat-radio-group formControlName="userType" aria-label="Select a User Type">
-           <mat-radio-button value="SELLER">Seller</mat-radio-button>
-           <mat-radio-button value="BUYER">Buyer</mat-radio-button>
-         </mat-radio-group>
-      
-         <div class="custom-button-group">
-           <button routerLink="/login" mat-raised-button style="background-color: #4c54f8; color: white;">Back to Login</button>
-           <button mat-raised-button color="primary" [disabled]="!this.registerForm.valid" (click)="proceedRegister()">Submit</button>
-         </div>
-       </form>
-     </mat-card-content>
-   </mat-card>
-   
+      <mat-card-title class="custom-card-title">Registration</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="custom-card-content" style="margin-top: 15px">
+      <form class="custom-example-form" [formGroup]="registerForm">
+        <mat-form-field class="custom-example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error>Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom-example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error>E-mail is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom-example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error>Password is required</mat-error>
+        </mat-form-field>
+  
+        <mat-radio-group
+          formControlName="userType"
+          aria-label="Select a User Type"
+        >
+          <mat-radio-button value="SELLER">Seller</mat-radio-button>
+          <mat-radio-button value="BUYER">Buyer</mat-radio-button>
+        </mat-radio-group>
+  
+        <div class="custom-button-group">
+          <button
+            routerLink="/login"
+            mat-raised-button
+            style="background-color: #4c54f8; color: white"
+          >
+            Back to Login
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            style="background-color: crimson; color: white"
+            [disabled]="!this.registerForm.valid"
+            (click)="proceedRegister()"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

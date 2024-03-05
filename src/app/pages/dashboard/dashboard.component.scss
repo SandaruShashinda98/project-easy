@@ -4,15 +4,19 @@
   height: 100%;
 }
 mat-drawer {
-  width: 10vw;
-  background: rgba(209, 252, 252, 0.1); 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 12vw;
+ // background: rgba(209, 252, 252, 0.1); 
+  border: 0px solid rgba(255, 255, 255, 0.2);
 }
-
+@media screen and (max-width: 600px) {
+  mat-drawer {
+    width: 20vw;
+  }
+}
 mat-drawer-container {
   height: 100%;
   background: rgba(248, 249, 249, 0.1); 
-  border: 1px solid rgba(255, 255, 255, 0.2)
+  border: 0px solid rgba(255, 255, 255, 0.2)
 }
 
 app-header{
@@ -25,22 +29,19 @@ mat-drawer-content {
 }
 
 .drawer {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(21, 21, 21, 0.5);
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  // box-shadow: 0px 0px 10px rgba(21, 21, 21, 0.5);
 }
 
 /* Optional: Add hover effect for a more interactive feel */
 .mat-drawer-container:hover {
-  background: rgba(189, 221, 244, 0.2);
+//  background: rgba(189, 221, 244, 0.2);
 }
 
 /* Optional: Add hover effect for mat-drawer */
 .mat-drawer:hover {
-  background: rgba(189, 221, 244, 0.2);
+  //background: rgba(189, 221, 244, 0.2);
 }
 
-/* Optional: Add hover effect for router-outlet content */
-.mat-drawer-content:hover {
-  background: rgba(189, 221, 244, 0.2);
-}
+

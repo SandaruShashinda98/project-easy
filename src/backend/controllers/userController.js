@@ -1,6 +1,8 @@
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
+import { Types } from "mongoose";
+import bcrypt from "bcryptjs";
 
 // @desc    Auth user & get token
 // @route   POST /api/users/auth
@@ -72,9 +74,10 @@ const logoutUser = (req, res) => {
 };
 
 // @desc    Get user profile
-// @route   GET /api/users/profile
+// @route   GET /api/users/profile/:id
 const getUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id);
+  console.log(req.params)
+  const user = await User.findById(req.params.id);
 
   if (user) {
     res.json({
@@ -93,9 +96,9 @@ const getUserProfile = asyncHandler(async (req, res) => {
 });
 
 // @desc    Update user profile
-// @route   PUT /api/users/profile
+// @route   patch /api/users/profile/:id
 const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id);
+  const user = await User.findOne({_id: req.params.id});
 
   if (user) {
     user.name = req.body.name || user.name;
@@ -104,21 +107,56 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     if (req.body.password) {
       user.password = req.body.password;
     }
-
-    const updatedUser = await user.save();
-
-    res.json({
-      _id: updatedUser._id,
-      name: updatedUser.name,
-      email: updatedUser.email,
-      address: user.address,
-      storeName: user.storeName,
-      storeDescription: user.storeDescription,
-      permissionType: updatedUser.permissionType,
-    });
+    const reqBody = {
+      ...req.body,
+      _id: new Types.ObjectId(req.body._id),
+    };
+    const foundUser =  user ? user._doc : null;
+    const data = { ...foundUser, ...reqBody };
+    const updatedUser = await User.findByIdAndUpdate(
+      user._id,
+      { $set: data },
+      { new: true }
+    );
+    if (updatedUser) {
+      res.status(201).json(updatedUser);
+    } else {
+      res.status(400);
+      throw new Error("invalid data");
+    }
   } else {
     res.status(404);
     throw new Error('User not found');
+  }
+});
+
+// @desc    Update user password
+// @route   patch /api/users/password/:id
+const updateUserPassword = asyncHandler(async (req, res) => {
+  const { currentPassword, newPassword } = req.body;
+
+  try {
+    // Find the user by ID
+    const user = await User.findById(req.params.id);
+
+    // Check if the current password is correct
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Current password is incorrect' });
+    }
+
+    // Update the password
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(newPassword, salt);
+
+    // Save the updated user
+    await user.save();
+
+    res.status(200).json({ message: 'Password updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 });
 export {
@@ -127,4 +165,5 @@ export {
   logoutUser,
   getUserProfile,
   updateUserProfile,
+  updateUserPassword
 };

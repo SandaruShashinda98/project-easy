@@ -7,6 +7,7 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MaterialModule } from 'src/app/material.module';
     FormsModule,
     HttpClientModule,
     ProductRoutingModule,
-    CommonModule
+    CommonModule,
+    NgxDropzoneModule
   ]
 })
 export class ProductModule { }

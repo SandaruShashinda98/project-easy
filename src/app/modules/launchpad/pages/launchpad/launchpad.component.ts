@@ -9,11 +9,11 @@ import { Color } from '@swimlane/ngx-charts';
 export class LaunchpadComponent {
 
   saleData = [
-    { name: "Mobiles", value: 105000 },
-    { name: "Laptop", value: 55000 },
-    { name: "AC", value: 15000 },
-    { name: "Headset", value: 150000 },
-    { name: "Fridge", value: 20000 }
+    { name: "Polo", value: 105000 },
+    { name: "Adidas", value: 55000 },
+    { name: "Gucci", value: 15000 },
+    { name: "Tommy Hilfiger", value: 150000 },
+    { name: "Louis Vuitton", value: 20000 }
   ];
 
 

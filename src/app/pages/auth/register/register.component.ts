@@ -33,7 +33,7 @@ export class RegisterComponent {
     };
     this.userService.registerUser(user).subscribe({
       next: (res:any) => {
-        this.snackBar.open('Logged in Successfully', 'Dismiss', {
+        this.snackBar.open('Registered Successfully', 'Dismiss', {
           duration: 3000,
         });
         this.router.navigate([`/login`]);

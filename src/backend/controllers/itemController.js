@@ -10,12 +10,13 @@ const getAllItems = asyncHandler(async (req, res) => {
 
 // @route   POST /api/items
 const createItem = asyncHandler(async (req, res) => {
-  const item = {
+  const saveItem = {
     ...req.body,
     userId: new Types.ObjectId(req.body.userId),
   };
 
-  const createdItem = await item.create(item);
+  const createdItem = await item.create(saveItem);
+  console.log(createdItem)
 
   if (createdItem) {
     res.status(201).json(createdItem);

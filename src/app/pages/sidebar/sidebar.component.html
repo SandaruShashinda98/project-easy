@@ -2,22 +2,22 @@
     <div class="profile-card">
         <div class="header">
             <h2>Hii {{name}}</h2>
-            <h4>{{email}}</h4>
+            <p>{{email}}</p>
         </div>
         <!-- <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="a dog img"> -->
     </div>
 
-    <mat-divider></mat-divider>
+    <mat-divider style="width: 70%; margin-left: 40px; margin-bottom: 10px;"></mat-divider>
 
-     <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/launchpad">LaunchPad</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/profile">My Profile</a>
+     <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/launchpad" class="custom-font">Launchpad</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/profile" class="custom-font">My Profile</a>
 
     <div *ngIf="permissionType === 'BUYER'">
         <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/notice/view">View Notice</a> -->
     </div>
 
     <div *ngIf="permissionType === 'SELLER'">
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/product/create">Add Product</a>
-        <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/assets/view">View Products</a> -->
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/app/product/create" class="custom-font">Add Product</a>
+        <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/assets/view" class="custom-font">View Products</a> -->
     </div>
 </mat-nav-list>

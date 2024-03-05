@@ -66,3 +66,16 @@ export interface IProductRequest{
   //from ML
   bodyType?: string;
 }
+
+export interface IBodyCategoryRequest{
+  bodyArea?: string;
+  armLength?: number[];
+  belly?: number[];
+  chestWidth?:number[];
+  hip?: number[];
+  kneeToToe?:number[];
+  shoulderToWaist?:number[];
+  shoulderWidth?:number[];
+  waist?: number[];
+  waistToKnee?: number[];
+}
